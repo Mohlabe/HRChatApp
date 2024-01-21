@@ -55,15 +55,15 @@ resource "aws_security_group" "projectApp_sg" {
 }
 
 
-resource "aws_instance" "HrAppServer" {
+resource "aws_instance" "ChatAppServer" {
   count = 2
   ami           = "ami-0e878fcddf2937686"
   instance_type = "t3.micro"
-  subnet_id = "subnet-03dfd1000114782e3"
+  subnet_id = "subnet-0c9e27942d046e838"
   key_name = aws_key_pair.KeyPair_Deploy.key_name
 
    tags = {
-    Name = "JHBAppserver-${count.index + 1}"
+    Name = "JHBCAppserver-${count.index + 1}"
 
   
 }
